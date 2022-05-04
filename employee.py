@@ -40,6 +40,6 @@ class Employee:
         - where: [employee] is the name of the employee taken from the input
         - where: [payout] is the output of the method 'get_payout'
         """
+        pass
 
-        return f"The amount to pay {employee} is: {payout} USD"
 
