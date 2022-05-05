@@ -81,11 +81,11 @@ OUTPUT:
 
 ---
 
--`$ git clone https://github.com/skynet118/ioet_excercise.git`
--`$ cd ioet_excercise/`
--`$ pip install -r requirements.txt`
--`$ python3 main.py --help                  # options how to use it`
--`$ python3 main.py -f ./src/employees.txt  # to read from a file`
+- `$ git clone https://github.com/skynet118/ioet_excercise.git`
+- `$ cd ioet_excercise/`
+- `$ pip install -r requirements.txt`
+- `$ python3 main.py --help                  # options how to use it`
+- `$ python3 main.py -f ./src/employees.txt  # to read from a file`
 
 ---
 
