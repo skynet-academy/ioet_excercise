@@ -9,21 +9,27 @@ re_workday = f'{re_day}{re_time_worked}'
 re_employee_workday = f'^{re_employee_name}={re_workday}(,{re_workday})*$'
 
 
-def format_input_checking(working_days):
+def format_input_checking(working_days) -> bool:
     if(re.match(re_employee_workday, working_days)):
         matches = re.finditer(re_time_worked, working_days)
         for match in matches:
-            if(not match.group(1) < match.group(3)):
-                raise ValueError(f"({match.group(1)}) begging time cannot be equal or greater than ({match.group(3)})")
+            start = match.group(1)
+            end = '24:00' if match.group(3) == '00:00' else match.group(3)
+            if(not start < end):
+                raise ValueError(f"({start}) begging time cannot be equal or greater than ({end})")
 
     else:
         raise Exception("Invalid input format")
     
     return True
 
-def format_time_checking(time_string):
+def format_time_checking(time_string) -> int:
     format_time = '%H:%M'
     zero_time = datetime.strptime('00:00', format_time)
     output = datetime.strptime(time_string, format_time) - zero_time
-    hours = output.total_seconds() // 3600.00
+    hours = 0
+    if(output.total_seconds() == 0.0):
+        hours = 24.00
+    else:
+        hours = output.total_seconds() / 3600
     return hours
