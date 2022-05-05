@@ -74,19 +74,24 @@ OUTPUT:
 
 ### Requirements for testing:
 - pytest library
-- Run the following command: 
+- Run the following command all necesary packages for testing: 
   - `$ pip install -r requirements.txt`
-- 
-### Usage of main.py
+
+### Installation and usage of main.py
 
 ---
 
-`$ python3 main.py --help                 # options how to use it`
+-`$ git clone https://github.com/skynet118/ioet_excercise.git`
+-`$ cd ioet_excercise/`
+-`$ pip install -r requirements.txt`
+-`$ python3 main.py --help                  # options how to use it`
+-`$ python3 main.py -f ./src/employees.txt  # to read from a file`
 
-`$ python3 main.py -f ./src/employees.txt       # to read from a file`
-
+---
 
 ### Project's tree:
+
+--- 
 
 ```
  |---ioet_excercise
@@ -103,4 +108,3 @@ OUTPUT:
  |       |---requirements.txt
  |       |---README.md
 ```
----
